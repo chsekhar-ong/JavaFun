@@ -11,6 +11,8 @@ public class ConditionalStatements {
 		//cs.evencheck((int)1.5);
 		//cs.scannerCheck();
 		//cs.results();
+		//cs.switchvalue();
+		cs.switcheven();
 	}
 
 	public void checkif(int num) {
@@ -32,6 +34,7 @@ public class ConditionalStatements {
 				System.out.println("the given number is even");
 			}
 			else {
+
 				System.out.println("the given number is odd");
 			}
 		}
@@ -61,6 +64,7 @@ public class ConditionalStatements {
 			System.out.println("enter the valid number");
 		}
 
+
 		sc.close();
 	}
 
@@ -85,6 +89,7 @@ public class ConditionalStatements {
 				System.out.printf("Enter the vaild result,%d is outrageous %n",result);
 			}
 
+
 		}
 
 		else {
@@ -95,22 +100,82 @@ public class ConditionalStatements {
 
 	//predict the days of the week
 	public void yourday() {
-      Scanner sc = new Scanner(System.in);
-      String day=sc.nextLine();
-     // String[] weekdays= {"Monday","Tuesday","Wednesday","Thusday","Friday","Saturday","Sunday"};
-     if(day.equalsIgnoreCase("Monday") || day.equalsIgnoreCase("Tuesday") ||day.equalsIgnoreCase("Wednesday")  || day.equalsIgnoreCase("thusday") || day.equalsIgnoreCase("friday")) {
-    	System.out.println("uff's its a weekday"); 
-     }
-     else if(day.equalsIgnoreCase("saturday")||day.equalsIgnoreCase("sunday")){
-    	System.out.println("Hurry its weekend"); 
-     }
-     else {
-    	 System.out.println("ENter the valid day");
-     }
-      sc.close();
+		Scanner sc = new Scanner(System.in);
+
+		String day=sc.nextLine();
+		// String[] weekdays= {"Monday","Tuesday","Wednesday","Thusday","Friday","Saturday","Sunday"};
+		if(day.equalsIgnoreCase("Monday") || day.equalsIgnoreCase("Tuesday") ||day.equalsIgnoreCase("Wednesday")  || day.equalsIgnoreCase("thusday") || day.equalsIgnoreCase("friday")) {
+			System.out.println("uff's its a weekday"); 
+		}
+		else if(day.equalsIgnoreCase("saturday")||day.equalsIgnoreCase("sunday")){
+			System.out.println("Hurry its weekend"); 
+		}
+		else {
+			System.out.println("ENter the valid day");
+		}
+		sc.close();
 
 	}
-	
-	
+
+
 	//switch case
+	public void switchvalue() {
+
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+
+		switch(num%2) {
+		case 0:
+			System.out.println("The Number is even");
+			break;
+		case 1:
+			System.out.println("The Number is odd");
+			break;
+		default :
+			System.out.println("the Number is invalid");
+			break;
+
+		}
+		sc.close();
+	}
+	//
+	public void switcheven() {
+
+     Scanner sc=new Scanner(System.in);
+     double num1=sc.nextDouble();
+     System.out.printf("number1 %f%n",num1);
+     double num2=sc.nextDouble();
+     System.out.printf("number2 %f%n",num2);
+     char operator=sc.next().charAt(0);
+     System.out.println("Enter the arthematic operation('+','-','*','/','%')");
+     double result;
+     switch(operator) {
+     
+     case '+':
+    	 result=num1+num2;
+    	 System.out.println("the Athematic operation Addition is performed:" + result);
+    	 break;
+     case '-':
+    	 result=num1-num2;
+    	 System.out.println("the Athematic operation subtraction is performed:" + result);
+    	 break;
+     case '*':
+    	 result=num1*num2;
+    	 System.out.println("the Athematic operation multiply is performed:" + result);
+    	 break;
+     case '/':
+    	 if(num2!=0) {
+    		 result=num1/num2;
+    		 System.out.println("the arthematic operation divison is performed:" +" "+ result); 
+    	 }
+    	 else {
+    		 System.out.println("divison is not possible with Number2 is equal to 0");
+    	 }
+    	 break;
+     default:
+    	 System.out.println("Enter the valid operator:");
+     }
+     
+	}
+
 }
